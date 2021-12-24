@@ -1,7 +1,7 @@
 import os
 import platform
 import shutil
-from distutils.command.build_ext import build_ext
+from setuptools.command.build_ext import build_ext
 from glob import glob
 from pathlib import Path
 from Cython.Build import cythonize
