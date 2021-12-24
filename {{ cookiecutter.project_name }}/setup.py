@@ -71,7 +71,7 @@ class KitBuildExt(build_ext):
         """
         使用PyInstaller编译应用
         """
-        pyinstall_spec = 'pyi-makespec ./%s.py ' % bin_script
+        pyinstall_spec = 'pyi-makespec -w --onefile ./%s.py ' % bin_script
         if with_scikit == 'yes':
             pyinstall_spec += '--hiddenimport sklearn '
             pyinstall_spec += '--hiddenimport sklearn.ensemble '
@@ -120,13 +120,13 @@ class KitBuildExt(build_ext):
 
 setup(
     name=mod,
-    version="0.0.4",
-    description="Cython Project",
-    long_description="Cython Project",
+    version="0.0.1",
+    description="{{cookiecutter.bootstrap_name}}",
+    long_description="{{cookiecutter.bootstrap_name}}",
     url="",
-    author="umaru",
-    author_email="15875339926@139.com",
-    license="MIT",
+    author="core",
+    author_email="",
+    license="my",
     install_requires=["cython", "logzero", "PyInstaller", "click"],
     packages=local_packages,
     platforms="any",
